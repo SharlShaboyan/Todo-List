@@ -9,10 +9,7 @@ export default function List({todos, onDelete, changeCheckbox}) {
                         <div className="todo-item" key={todo.id}>
                             <h1>{todo.text}</h1>
                             <input type="checkbox" checked={todo.checked} onChange={(e) => {
-                                changeCheckbox({
-                                    ...todo,
-                                    checked : e.target.checked
-                                })
+                                changeCheckbox(todo);
                             }} />
                             <button onClick={() => {
                                 onDelete(todo)

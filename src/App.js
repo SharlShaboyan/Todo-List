@@ -55,9 +55,10 @@ function App() {
           setTodos(todos.filter((t) => t.id !== todo.id))
         }}
         changeCheckbox={(newTodo) => {
-          setTodos(todos.map((todo) => {
+          setTodos(
+            todos.map((todo) => {
             if (newTodo.id === todo.id) {
-              return newTodo
+              todo.checked = !todo.checked
             }
               return todo
           }))
